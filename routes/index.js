@@ -43,11 +43,14 @@ router.get("/", async function (req, res, next) {
           ob.branch +
           " / " +
           ob.build_num +
-          " / " +
+          " / <span title='"+moment(ob.stop_time)
+          .tz("America/New_York")
+          .format("MMMM Do YYYY, h:mm:ss a") +
+          " EDT"+"'>" +
           moment(ob.stop_time)
           .tz("Asia/Kolkata")
           .format("MMMM Do YYYY, h:mm:ss a") +
-          " IST <br>"
+          " IST </span><br>"
         );
       }
       if (
