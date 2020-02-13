@@ -76,7 +76,7 @@ router.get("/", async function (req, res, next) {
       "<br><a href='https://github.com/topcoder-platform/community-app/blob/develop/docs/deployment-env.md'>Deployment Environments</a>"
     );
     //str = str.concat("```\n");
-    console.log(str);
+    //console.log(str);
     return str;
   }
 
