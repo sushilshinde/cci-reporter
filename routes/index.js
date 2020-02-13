@@ -57,8 +57,8 @@ router.get("/", async function (req, res, next) {
         latest.indexOf(ob.workflows.job_name) < 0 &&
         ob.status === "running"
       ) {
-        console.log(
-          "Running workflow :" +
+        str = str.concat(
+          "<br><font color='green'>Running workflow : " +
           ob.workflows.job_name.replace("build-", "") +
           " : " +
           ob.branch +
@@ -68,7 +68,7 @@ router.get("/", async function (req, res, next) {
           moment(ob.start_time)
           .tz("Asia/Kolkata")
           .format("MMMM Do YYYY, h:mm:ss a") +
-          " IST"
+          " IST </font><br>"
         );
       }
     }
