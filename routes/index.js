@@ -37,7 +37,7 @@ router.get("/", async function (req, res, next) {
         ob.status === "success"
       ) {
         latest.push(ob.workflows.job_name);
-        str = str.concat(
+        str = str.concat("<br>" +
           ob.workflows.job_name.replace("build-", "") +
           " : " +
           ob.branch +
@@ -73,7 +73,7 @@ router.get("/", async function (req, res, next) {
       }
     }
     str = str.concat(
-      "<a href='https://github.com/topcoder-platform/community-app/blob/develop/docs/deployment-env.md'>Deployment Environments</a>"
+      "<br><a href='https://github.com/topcoder-platform/community-app/blob/develop/docs/deployment-env.md'>Deployment Environments</a>"
     );
     //str = str.concat("```\n");
     console.log(str);
