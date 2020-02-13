@@ -78,8 +78,7 @@ router.get("/", async function (req, res, next) {
     str = str.concat(
       "<br><a href='https://github.com/topcoder-platform/community-app/blob/develop/docs/deployment-env.md'>Deployment Environments</a>"
     );
-    //str = str.concat("```\n");
-    //console.log(str);
+    str = str.concat("<br><br> <span style='font-style: italic; font-size: 14px;' > This page was loaded on - "+moment().tz("Asia/Kolkata").format("MMMM Do YYYY, h:mm:ss a") + " IST </span>");
     return str;
   }
 
