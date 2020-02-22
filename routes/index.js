@@ -19,10 +19,8 @@ router.get("/", async function (req, res, next) {
     ];
     let latest = [];
     let str = "";
-    //str = str.concat("*Test environments deployments*");
-    //str = str.concat("```\n");
-    str = str.concat("env: branch-deployed / build-num / Date-Time IST <br>");
-
+    str = str.concat("<div style='font-style: italic; font-size: 14px;' >( At - "+moment().tz("Asia/Kolkata").format("MMMM Do YYYY, h:mm:ss a") + " IST)</div><br>");
+    str = str.concat("<div>env: branch-deployed / build-num / Date-Time IST </div>");
     str = str.concat(
       "-----------------------------------------------------<br>"
     );
@@ -42,8 +40,8 @@ router.get("/", async function (req, res, next) {
           " : " +
           ob.branch +
           " / " +
-          ob.build_num +
-          " / <span title='"+moment(ob.stop_time)
+          +ob.build_num+
+          "/ <span title='" + moment(ob.stop_time)
           .tz("America/New_York")
           .format("MMMM Do YYYY, h:mm:ss a") +
           " EDT"+"'>" +
@@ -78,7 +76,6 @@ router.get("/", async function (req, res, next) {
     str = str.concat(
       "<br><a href='https://github.com/topcoder-platform/community-app/blob/develop/docs/deployment-env.md'>Deployment Environments</a>"
     );
-    str = str.concat("<br><br> <span style='font-style: italic; font-size: 14px;' > This page was loaded on - "+moment().tz("Asia/Kolkata").format("MMMM Do YYYY, h:mm:ss a") + " IST </span>");
     return str;
   }
 
