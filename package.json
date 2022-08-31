@@ -20,7 +20,7 @@
     "dotenv": "^8.0.0",
     "hyperdiff": "^2.0.5",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "node-schedule": "^1.3.2",
     "restful": "^0.4.5"
   },
